@@ -41,8 +41,8 @@ const Bio = () => {
           {author?.description || null}
           {` `}
           {author?.twitter && (
-            <a href={`https://github.com/devopspwc/wptest``}`}>
-              You should follow them on 
+            <a href={`https://twitter.com/${author?.twitter || ``}`}>
+              You should follow them on Twitter
             </a>
           )}
         </p>
