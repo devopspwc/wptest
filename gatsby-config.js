@@ -28,7 +28,21 @@ module.exports = {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `http://wp1.ftdp.biz/graphql`,
+          `https://wpgatsbydemo.wpengine.com/graphql`,
+      },
+    },
+
+    /**
+     * We need this plugin so that it adds the "File.publicURL" to our site
+     * It will allow us to access static url's for assets like PDF's
+     *
+     * See https://www.gatsbyjs.org/packages/gatsby-source-filesystem/ for more info
+     */
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/content/assets`,
       },
     },
 
