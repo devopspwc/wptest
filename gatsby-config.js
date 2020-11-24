@@ -5,6 +5,23 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+        {
+      /**
+       * First up is the WordPress source plugin that connects Gatsby
+       * to your WordPress site.
+       *
+       * visit the plugin docs to learn more
+       * https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/README.md
+       *
+       */
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        // the only required plugin option for WordPress is the GraphQL url.
+        url:
+          process.env.WPGRAPHQL_URL ||
+          `http://wp1.ftdp.biz/graphql`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
